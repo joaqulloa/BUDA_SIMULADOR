@@ -13,8 +13,8 @@ const WelcomePage = () => {
 const [dataBuda, setDataBuda] = useState([]);
 
 //Datos formulario
-const [mes_inicial, setMes_inicial] = useState(['2022-01-01']);
-const [mes_final, setMes_Final] = useState(['2024-01-01']);
+const [mes_inicial, setMes_inicial] = useState('2022-01-01');
+const [mes_final, setMes_Final] = useState('2024-01-01');
 const [monto, setMonto] = useState(100)
 
 //Datos para chart
@@ -23,19 +23,8 @@ const [dataMontos, setDataMontos] = useState([]);
 const [dataPortafolio, setDataPortafolio] = useState([]);
 
 //Refresco
-const [refresh, setRefresh] = useState(1);
 const [loading, setLoading] = useState(false);
-
-//Transformar fecha
-function transformarFormato(fecha) {
-  const fechaOriginal = new Date(fecha);
-  const año = fechaOriginal.getFullYear();
-  const mes = (fechaOriginal.getMonth() + 1).toString().padStart(2, '0'); // El mes es de 0 a 11
-  const nuevoFormato = `${año}-${mes}`;
-
-  return nuevoFormato;
-}
-
+const [request, setRequest] = useState(false);
 
 
 useEffect(() => {
@@ -43,8 +32,10 @@ useEffect(() => {
   const updatedDataFechas = [];
   const updatedDataMontos = [];
   const updatedDataPortafolio = [];
-  const mes_inicial_ = transformarFormato(mes_inicial)
-  const mes_final_ = transformarFormato(mes_final)
+  const mes_inicial_ = mes_inicial.substring(0,7)
+  const mes_final_ = mes_final.substring(0,7)
+  console.log(mes_inicial_)
+  console.log(mes_final_)
   setLoading(true);
 
   // Realiza la solicitud al server
@@ -63,7 +54,7 @@ useEffect(() => {
 
         //Se almacenan datos para el chart
         updatedDataFechas.push(new Date(item.timestamp).toISOString().split('T')[0])
-        updatedDataMontos.push((index + 1) * 100)
+        updatedDataMontos.push((index + 1) * monto)
         updatedDataPortafolio.push(index > 0 ? (1 + bitcoinPriceChangePercentage) * amountInvested : amountInvested)
 
 
@@ -93,7 +84,7 @@ useEffect(() => {
     .finally(() => {
       setLoading(false);
     });
-}, [refresh]);
+}, [request]);
 
 
 
@@ -162,7 +153,7 @@ useEffect(() => {
     console.log('Monto:', monto);
     console.log('Fecha Inicio:', mes_inicial);
     console.log('Fecha Fin:', mes_final);
-    setRefresh(2)
+    request == true? setRequest(false) : setRequest(true);
   }
 
 
