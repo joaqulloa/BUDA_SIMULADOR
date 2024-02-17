@@ -5,7 +5,10 @@ import { footerLinks} from '../constants';
 
 const FooterSection = () => (
     <section  className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+    {/* Contenedor principal */}  
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
+
+        {/* Logo y descripción del footer */}  
         <div className='flex-[1] flex flex-col justify-start mr-10'>
           <img src={buda} alt="feedbacker" className='w-[220px] h-[72.14px] object-contain'/>
           <p className={`${styles.paragraph} mt-4 max-w-[312px] text-white`}>
@@ -13,6 +16,7 @@ const FooterSection = () => (
           </p>
         </div>
 
+        {/* Links del footer */}  
         <div className='flex-[1.5] w-full flex xs:flex-row flex-col justify-between flex-wrap md:mt-0 mt-10'>
           {footerLinks.map((footerlink) => (
             <div key={footerlink.title} className={`flex flex-col  ss:my-0 my-4 min-w-[150px]`}>
