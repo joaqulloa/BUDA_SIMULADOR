@@ -12,7 +12,7 @@ const Card = ({ title, value, icon }) => {
           <h4 className='font-poppins font-semibold text-dimWhite text-[18px] leading-[23.4px] mb-1'>
             {title}
           </h4>
-          <p className='font-poppins font-normal text-dimWhite text-[16px] leading-[24px]'>
+          <p className='font-poppins font-normal text-green-500 text-[16px] leading-[24px]'>
             {value}
           </p>
         </div>
@@ -28,9 +28,9 @@ const Resume = ({mount, invested, value}) => {
   return (
     <section id="resume" className={`flex md:flex-col flex-col ${styles.paddingY} ${styles.flexCenter}`}>
         
-        <h1 className={`font-poppins font-semibold xs:text-[3rem] text-[1.5rem] xs:leading-[76.8px] leading[66.8px] w-auto text-white`}>Bitcoin DCA Simulator</h1>
+        <h1 className={`font-poppins font-semibold xs:text-5xl text-2xl xs:mb-0 mb-5 xs:leading-[76.8px] leading[66.8px]  text-white`}>Bitcoin DCA Simulator</h1>
 
-        <p className={`${styles.paragraph} text-dimWhite`}>Rendimiento histórico del DCA al comprar Bitcoin (BTC) mensualmente con {mount} US Dollasr</p>
+        <p className={`text-dimWhite text-lg xs:mb-0 mb-5`}>Rendimiento histórico del DCA al comprar Bitcoin (BTC) mensualmente con {mount} US Dollars</p>
 
         <div className='flex flex-row'>
         {/* Card: Monto Invertido */}

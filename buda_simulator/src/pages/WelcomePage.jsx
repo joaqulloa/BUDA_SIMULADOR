@@ -105,6 +105,7 @@ useEffect(() => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -159,7 +160,7 @@ useEffect(() => {
         <Resume mount={monto} invested={dataMontos[dataMontos.length-1]} value={dataPortafolio[dataPortafolio.length-1]}/>
         <div className='flex flex-1 md:flex-row flex-col'>
         <DateRangePicker mount={monto} startDate={mes_inicial} endDate={mes_final} setMount={setMonto} setStartDate={setMes_inicial} setEndDate={setMes_Final} onChange={onUpdate} />
-        <div className='flex-1 ml-5'>
+        <div className='flex-1 ml-5 sm:w-full w-[90%]'>
           <Line options={options} data={dataChart} />
         </div>
         </div>
