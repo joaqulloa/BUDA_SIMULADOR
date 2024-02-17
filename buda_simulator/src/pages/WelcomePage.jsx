@@ -119,12 +119,12 @@ useEffect(() => {
     scales: {
       x: {
         ticks: {
-          color: 'rgb(250, 250, 250)', // Cambia el color del texto de las etiquetas del eje x aquí
+          color: 'rgb(250, 250, 250)', 
         },
       },
       y: {
         ticks: {
-          color: 'rgb(250, 250, 250)', // Cambia el color del texto de las etiquetas del eje y aquí
+          color: 'rgb(250, 250, 250)',
         },
       },
     },
@@ -150,9 +150,6 @@ useEffect(() => {
 
   const onUpdate = () => {
     // Aquí puedes realizar las acciones necesarias con los valores actualizados
-    console.log('Monto:', monto);
-    console.log('Fecha Inicio:', mes_inicial);
-    console.log('Fecha Fin:', mes_final);
     request == true? setRequest(false) : setRequest(true);
   }
 
