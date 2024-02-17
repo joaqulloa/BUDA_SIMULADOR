@@ -9,13 +9,11 @@ const App = () => {
   return(
     <Router>
     <div className={`bg-[#032647] w-full overflow-hidden`}>
-
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <NavBar />
         </div>
       </div>
-
       <div className={`bg-[#053B6D] ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
         <Routes>
@@ -24,7 +22,6 @@ const App = () => {
         <FooterSection/>
         </div>
       </div>
-      
     </div>
   </Router>
   );

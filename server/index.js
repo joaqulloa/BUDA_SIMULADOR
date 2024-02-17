@@ -17,7 +17,7 @@ app.get('/consultar-precios', async (req, res) => {
       //const { mes_inicial, mes_final } = req.query;
       const { mes_inicial, mes_final } = req.query;
   
-      // Convertir meses a marcas de tiempo UNIX
+      //Convertir meses a marcas de tiempo UNIX
       const mesInicialTimestamp = new Date(`${mes_inicial}-01T00:00:00Z`).getTime();
       const mesFinalTimestamp = new Date(`${mes_final}-01T00:00:00Z`).getTime();
   

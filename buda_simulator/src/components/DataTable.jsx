@@ -3,7 +3,11 @@ import styles from '../style';
 const DataTable = ({ data }) => {
   return (
     <section className={`${styles.flexCenter} mt-10  bg-[#032647] rounded-3xl p-8 overflow-x-auto`}>
+    
+    {/* Tabla */} 
     <table className='text-white border-white w-full'>
+
+      {/* Tabla headers */} 
       <thead>
         <tr>
           <th className="border xs:text-base text-xs">#</th>
@@ -15,6 +19,8 @@ const DataTable = ({ data }) => {
           <th className="border xs:text-base text-xs">Cambio %</th>
         </tr>
       </thead>
+
+      {/* Tabla body */} 
       <tbody>
         {data.map((item, index) => (
           <tr key={index}>

@@ -30,7 +30,7 @@ const Resume = ({mount, invested, value}) => {
         
         <h1 className={`font-poppins font-semibold xs:text-5xl text-2xl xs:mb-0 mb-5 xs:leading-[76.8px] leading[66.8px]  text-white`}>Bitcoin DCA Simulator</h1>
 
-        <p className={`text-dimWhite text-lg xs:mb-0 mb-5`}>Rendimiento histórico del DCA al comprar Bitcoin (BTC) mensualmente con {mount} US Dollars</p>
+        <p className={`text-dimWhite text-lg xs:mb-0 mb-5`}>Rendimiento histórico del DCA al comprar Bitcoin (BTC) mensualmente con {mount} CLP</p>
 
         <div className='flex flex-row'>
         {/* Card: Monto Invertido */}
